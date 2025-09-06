@@ -1,17 +1,17 @@
 "use client";
 
 import Link from "next/link";
-import { Button, Flex, Popover, Switch, Menu } from "antd";
-import { MoonFilled, SettingOutlined, SunFilled } from "@ant-design/icons";
+import { Button, Flex, Popover, Menu } from "antd";
+import { SettingOutlined } from "@ant-design/icons";
 import { usePathname } from "next/navigation";
 
 import { Settings } from "./Settings";
-import { useThemeStore } from "@/features/theme/store";
 import { Logo } from "@/assets/illustration/Logo";
+import dynamic from "next/dynamic";
+
+const ThemeSwitch = dynamic(() => import("@/features/theme/ThemeSwitch"));
 
 export const Header = () => {
-  const { theme, setTheme } = useThemeStore();
-
   const pathname = usePathname();
   const navigationItems = [
     {
@@ -50,12 +50,7 @@ export const Header = () => {
         >
           <Button variant="outlined" icon={<SettingOutlined />} />
         </Popover>
-        {/* <MoonFilled className="text-solarized-base0 block" />
-        <Switch
-          checked={theme === "dark"}
-          onChange={(checked) => setTheme(checked ? "dark" : "light")}
-        />
-        <SunFilled className="text-solarized-base0 block" /> */}
+        <ThemeSwitch />
       </Flex>
     </header>
   );

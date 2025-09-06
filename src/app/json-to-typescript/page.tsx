@@ -25,6 +25,12 @@ import { useWindowSize } from "react-use";
 const { Panel } = Splitter;
 const { Title } = Typography;
 
+export const metadata = {
+  title: "JSON to TypeScript Converter – Z Tools",
+  description:
+    "Convert your JSON objects to TypeScript interfaces instantly with Z Tools.",
+};
+
 const JSONToTypescriptPage = () => {
   const fileToggle = useToggle();
   const fontSize = useSettingsStore((store) => store.fontSize);

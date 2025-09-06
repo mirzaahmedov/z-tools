@@ -19,10 +19,13 @@ const ubuntuMono = Ubuntu_Mono({
   weight: ["400", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Awesome tools for developers",
+export const metadata = {
+  title: {
+    default: "Z Tools – Developer Utilities",
+    template: "%s | Z Tools",
+  },
   description:
-    "A curated list of awesome tools and resources for developers to enhance productivity and streamline workflows.",
+    "Free and useful developer tools like JSON to TypeScript converter and color converter.",
 };
 
 export default function RootLayout({
