@@ -1,0 +1,74 @@
+@import "tailwindcss" important;
+@import "./editor.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: "Ubuntu Mono", monospace;
+  --font-display: "Climate Crisis", cursive;
+  --font-body: "Geist", sans-serif;
+
+  --color-gh-bg: var(--gh-color-bg);
+  --color-gh-fg: var(--gh-color-fg);
+  --color-gh-border: var(--gh-color-border);
+  --color-gh-muted: var(--gh-color-muted);
+  --color-gh-accent: var(--gh-color-accent);
+  --color-gh-hover: var(--gh-color-hover);
+  --color-gh-success: var(--gh-color-success);
+  --color-gh-warning: var(--gh-color-warning);
+  --color-gh-danger: var(--gh-color-danger);
+  --color-gh-code-bg: var(--gh-color-code-bg);
+  --color-gh-code-border: var(--gh-color-code-border);
+}
+
+@layer base {
+  :root {
+    --gh-color-bg: #ffffff;
+    --gh-color-fg: #1f2328;
+
+    --gh-color-border: #d0d7de;
+    --gh-color-muted: #6e7781;
+    --gh-color-accent: #0969da;
+    --gh-color-hover: #f6f8fa;
+
+    --gh-color-success: #2da44e;
+    --gh-color-warning: #bf8700;
+    --gh-color-danger: #cf222e;
+
+    --gh-color-code-bg: #f6f8fa;
+    --gh-color-code-border: #d0d7de;
+  }
+
+  html.dark {
+    --gh-color-bg: #0d1117;
+    --gh-color-fg: #c9d1d9;
+
+    --gh-color-border: #30363d;
+    --gh-color-muted: #8b949e;
+    --gh-color-accent: #58a6ff;
+    --gh-color-hover: #161b22;
+
+    --gh-color-success: #3fb950;
+    --gh-color-warning: #d29922;
+    --gh-color-danger: #f85149;
+
+    --gh-color-code-bg: #161b22;
+    --gh-color-code-border: #30363d;
+  }
+
+  html,
+  body,
+  #root,
+  main {
+    @apply h-full overflow-hidden;
+  }
+}
+
+@utility maximized {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+}

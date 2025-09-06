@@ -1,0 +1,48 @@
+.editor.cm-theme,
+.editor .cm-theme,
+.editor .cm-editor {
+  @apply h-full;
+}
+
+.cm-editor {
+  @apply border-none shadow-none outline-none;
+}
+.cm-editor .cm-scroller {
+  @apply font-mono;
+}
+.cm-editor.cm-focused {
+  @apply outline-none shadow-none;
+}
+
+.cm-editor::-webkit-scrollbar {
+  @apply size-2;
+}
+
+.cm-editor::-webkit-scrollbar-thumb {
+  @apply bg-gh-muted   rounded-md;
+}
+
+.cm-editor::-webkit-scrollbar-thumb:hover {
+  @apply bg-gh-accent;
+}
+
+.cm-editor::-webkit-scrollbar-track {
+  @apply bg-gh-bg rounded-md;
+}
+
+.cm-editor {
+  scrollbar-width: thin;
+  scrollbar-color: theme(color-gh-muted) theme(color-gh-bg);
+}
+
+.dark .cm-editor::-webkit-scrollbar-thumb {
+  @apply bg-gh-muted rounded-md;
+}
+
+.dark .cm-editor::-webkit-scrollbar-track {
+  @apply bg-gh-bg;
+}
+
+.dark .cm-editor {
+  scrollbar-color: theme(color-gh-muted) theme(color-gh-bg);
+}
